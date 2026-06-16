@@ -10,24 +10,76 @@
     @font-face{font-family:'Rubik';src:url('fonts/Rubik-Italic-Variable.ttf') format('truetype-variations');font-weight:300 900;font-style:italic;font-display:swap}
     @font-face{font-family:'Rubik Mono One';src:url('fonts/RubikMonoOne-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
 
+    :root{--coral:#ff6948}
+    *{box-sizing:border-box}
     body{font-family:'Rubik',Helvetica,Arial,Lucida,sans-serif;
-      margin:0;padding:40px 16px;background:#fff;color:#666;line-height:1.7em}
-    .demo-head{max-width:760px;margin:0 auto 28px}
-    .demo-head h1{font-size:1.3rem;font-weight:700;letter-spacing:.3px;color:#000;margin:0 0 4px}
-    .demo-head p{color:#666;font-size:.85rem;margin:0}
-    code{background:#f3f3f3;padding:1px 5px;border-radius:4px;font-size:.85em}
-    /* Hero-Zahlen in Rubik 700 — wie die Headings auf meilestn.de.
-       Rubik Mono One ist geladen und optional aktivierbar:
-       mns-lean-rechner{--mns-font-display:'Rubik Mono One','Rubik',sans-serif} */
+      margin:0;background:#fff;color:#666;line-height:1.7em}
+
+    /* ---------- Weißer Header (ohne Nav) ---------- */
+    .site-bar{background:#fff;border-bottom:1px solid rgba(0,0,0,.06)}
+    .bar-inner{max-width:1100px;margin:0 auto;padding:16px 24px;display:flex;align-items:center}
+    /* Logo in Originalfarben: schwarze Form, weiße Schrift */
+    .logo{height:52px;width:auto;display:block}
+    .logo .badge{fill:#0d0d0d}
+    .logo .word{fill:#fff}
+
+    .page{max-width:1100px;margin:0 auto;padding:0 24px 56px}
+
+    /* ---------- Hero ---------- */
+    .hero{position:relative;isolation:isolate;overflow:hidden;border-radius:14px;
+      margin:24px 0 28px;min-height:360px;display:flex;align-items:flex-end;background:#0c0c0c}
+    .hero-media,.hero-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .hero-scrim{position:absolute;inset:0;
+      background:linear-gradient(105deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.66) 48%,rgba(8,8,8,.30) 100%)}
+    .hero-inner{position:relative;z-index:1;padding:clamp(28px,4.5vw,52px);max-width:660px;color:#fff}
+
+    .hero-eyebrow{font-size:.72rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+      color:var(--coral);margin:0 0 12px}
+    .hero h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;line-height:1.08em;
+      letter-spacing:.2px;color:#fff;margin:0 0 14px}
+    .hero h1 .accent{color:var(--coral)}
+    .hero p{font-size:clamp(.95rem,1.6vw,1.08rem);color:rgba(255,255,255,.84);
+      line-height:1.6em;margin:0;max-width:52ch}
+
+    .embed-note{max-width:760px;margin:18px auto 0;font-size:.8rem;color:#999;text-align:center}
+    .embed-note code{background:#f3f3f3;color:#555;padding:1px 5px;border-radius:4px;font-size:.92em}
   </style>
 </head>
 <body>
-  <div class="demo-head">
-    <h1>Lean-Einsparrechner — Vorschau</h1>
-    <p>Einbindung: <code>&lt;script type="module" src="mns-rechner.js"&gt;</code> + <code>&lt;mns-lean-rechner&gt;</code>. Kein Build-Schritt, keine Datenübertragung.</p>
-  </div>
 
-  <mns-lean-rechner bausumme="120000000"></mns-lean-rechner>
+  <header class="site-bar">
+    <div class="bar-inner">
+      <!-- meile + stein — Originalfarben (schwarze Form, weiße Schrift) -->
+      <svg class="logo" viewBox="0 0 150 120" role="img" aria-label="meile + stein">
+        <polygon class="badge" points="4,30 96,30 146,4 146,116 4,116"/>
+        <text class="word" x="20" y="71" font-family="Rubik,sans-serif" font-weight="700" font-size="27">meile</text>
+        <text class="word" x="20" y="101" font-family="Rubik,sans-serif" font-weight="700" font-size="27">+ stein</text>
+      </svg>
+    </div>
+  </header>
+
+  <div class="page">
+
+    <header class="hero">
+      <picture class="hero-media">
+        <source srcset="img/hero.avif" type="image/avif">
+        <img src="img/hero.jpg" alt="Luftaufnahme einer komplexen Großbaustelle">
+      </picture>
+      <div class="hero-scrim"></div>
+
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Bausteuerung · Lean Construction</p>
+        <h1>Termine, die halten.<br><span class="accent">Geld, das bleibt.</span></h1>
+        <p>Sehen Sie, was konsequente Termin- und Lean-Steuerung Ihrem Bauprojekt bringt —
+           indikativ, in unter einer Minute, ganz ohne Datenerfassung.</p>
+      </div>
+    </header>
+
+    <mns-lean-rechner bausumme="120000000"></mns-lean-rechner>
+
+    <p class="embed-note">Einbindung: <code>&lt;script type="module" src="mns-rechner.js"&gt;</code> + <code>&lt;mns-lean-rechner&gt;</code> — kein Build-Schritt, keine Datenübertragung.</p>
+
+  </div>
 
   <script type="module" src="mns-rechner.js"></script>
 </body>
