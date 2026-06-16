@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Meile + Stein · Lean-Einsparrechner</title>
+  <style>
+    body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+      margin:0;padding:40px 16px;background:#fafafa;color:#1a1a1a}
+    @media(prefers-color-scheme:dark){body{background:#0f0f0f;color:#f2f2f2}}
+    .demo-head{max-width:760px;margin:0 auto 28px}
+    .demo-head h1{font-size:1.1rem;font-weight:600;margin:0 0 4px}
+    .demo-head p{color:#777;font-size:.85rem;margin:0}
+    code{background:rgba(127,127,127,.15);padding:1px 5px;border-radius:4px;font-size:.85em}
+  </style>
+</head>
+<body>
+  <div class="demo-head">
+    <h1>Lean-Einsparrechner — Vorschau</h1>
+    <p>Einbindung: <code>&lt;script type="module" src="mns-rechner.js"&gt;</code> + <code>&lt;mns-lean-rechner&gt;</code>. Kein Build-Schritt, keine Datenübertragung.</p>
+  </div>
+
+  <mns-lean-rechner bausumme="120000000"></mns-lean-rechner>
+
+  <script type="module" src="mns-rechner.js"></script>
+</body>
+</html>
