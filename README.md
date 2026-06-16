@@ -11,8 +11,14 @@ Lean-Einsparpotenzial von Bauprojekten sichtbar — datensparsam, ohne Build-Sch
 ```
 
 Stack-agnostisch (Custom Element, keine Runtime-Dependencies), 100 % client-seitig — kein
-Netzwerk-Call, kein Tracking (DSGVO-sauber). Theming über CSS Custom Properties (`--mns-accent`,
-`--mns-band`, …) zur Anpassung an die Host-Designtokens.
+Netzwerk-Call, kein Tracking (DSGVO-sauber).
+
+**Design:** Defaults sind an meilestn.de angelehnt — Schrift **Rubik**, Akzent **`#ff6948`**
+(Coral), heller Grauverlauf. Alles via CSS Custom Properties überschreibbar
+(`--mns-accent`, `--mns-band`, `--mns-fg`, `--mns-muted`, `--mns-line`, `--mns-soft`,
+`--mns-font`, `--mns-font-display`). Auf meilestn.de ist Rubik bereits geladen → keine
+zusätzlichen Font-Requests. `--mns-font-display` kann auf **Rubik Mono One** gesetzt werden
+(in `fonts/` enthalten), um die Hero-Zahlen als Display-Schrift zu setzen.
 
 ## Funktionen
 
@@ -30,8 +36,9 @@ Netzwerk-Call, kein Tracking (DSGVO-sauber). Theming über CSS Custom Properties
 | `KORREKTUR-LOG.md` | Nachvollziehbare Korrekturen ggü. dem Excel-Prototyp |
 | `methodik.md` | Inhalt für das Website-Panel „Methodik & Quellen" |
 | `mns-rechner.test.js` | Unit-Tests des Modells — `node mns-rechner.test.js` |
-| `index.html`, `demo/` | Einbettungs-Demo |
-| `Assets/` | Excel-Prototyp (Quelle) |
+| `index.html`, `demo/` | Einbettungs-Demo (lädt die lokalen Fonts) |
+| `fonts/` | Rubik (Variable) + Rubik Mono One, lokal gehostet (OFL-Lizenzen dabei) |
+| `Assets/` | Excel-Prototyp (Quelle) + Original-Font-Dateien |
 
 ## Vorschau lokal
 

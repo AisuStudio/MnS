@@ -5,13 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Meile + Stein · Lean-Einsparrechner</title>
   <style>
-    body{font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
-      margin:0;padding:40px 16px;background:#fafafa;color:#1a1a1a}
-    @media(prefers-color-scheme:dark){body{background:#0f0f0f;color:#f2f2f2}}
+    /* Fonts der meilestn.de-Marke (lokal gehostet aus Assets) */
+    @font-face{font-family:'Rubik';src:url('fonts/Rubik-Variable.ttf') format('truetype-variations');font-weight:300 900;font-style:normal;font-display:swap}
+    @font-face{font-family:'Rubik';src:url('fonts/Rubik-Italic-Variable.ttf') format('truetype-variations');font-weight:300 900;font-style:italic;font-display:swap}
+    @font-face{font-family:'Rubik Mono One';src:url('fonts/RubikMonoOne-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+
+    body{font-family:'Rubik',Helvetica,Arial,Lucida,sans-serif;
+      margin:0;padding:40px 16px;background:#fff;color:#666;line-height:1.7em}
     .demo-head{max-width:760px;margin:0 auto 28px}
-    .demo-head h1{font-size:1.1rem;font-weight:600;margin:0 0 4px}
-    .demo-head p{color:#777;font-size:.85rem;margin:0}
-    code{background:rgba(127,127,127,.15);padding:1px 5px;border-radius:4px;font-size:.85em}
+    .demo-head h1{font-size:1.3rem;font-weight:700;letter-spacing:.3px;color:#000;margin:0 0 4px}
+    .demo-head p{color:#666;font-size:.85rem;margin:0}
+    code{background:#f3f3f3;padding:1px 5px;border-radius:4px;font-size:.85em}
+    /* Hero-Zahlen in Rubik 700 — wie die Headings auf meilestn.de.
+       Rubik Mono One ist geladen und optional aktivierbar:
+       mns-lean-rechner{--mns-font-display:'Rubik Mono One','Rubik',sans-serif} */
   </style>
 </head>
 <body>

@@ -294,19 +294,20 @@ if (typeof customElements !== 'undefined' && typeof HTMLElement !== 'undefined')
 
     styles() {
       return `
+      /* Design-Tokens von meilestn.de (Divi/Rubik). Alle via Host überschreibbar. */
       :host{
-        --mns-fg:#1a1a1a; --mns-muted:#6b6b6b; --mns-bg:#fff; --mns-line:#e2e2e2;
-        --mns-accent:#1a1a1a; --mns-band:#2f6f4f; --mns-track:#ececec; --mns-soft:#f6f6f6;
-        --mns-radius:14px; --mns-font:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+        --mns-fg:#1a1a1a; --mns-muted:#666; --mns-bg:#fff; --mns-line:#e2e2e2;
+        --mns-accent:#ff6948; --mns-accent-strong:#ff603d; --mns-band:#ff6948;
+        --mns-track:#e5e5e5; --mns-soft:#f3f3f3; --mns-radius:10px;
+        --mns-font:'Rubik',Helvetica,Arial,Lucida,sans-serif;
+        --mns-font-display:var(--mns-font);
         display:block; color:var(--mns-fg); font-family:var(--mns-font);
       }
-      @media (prefers-color-scheme:dark){:host{
-        --mns-fg:#f2f2f2; --mns-muted:#a6a6a6; --mns-bg:#161616; --mns-line:#2c2c2c;
-        --mns-accent:#f2f2f2; --mns-band:#6fcf97; --mns-track:#2a2a2a; --mns-soft:#1e1e1e;}}
+      /* meilestn.de ist hell — Widget folgt dem Host (kein Auto-Dark). */
       *{box-sizing:border-box}
       .wrap{background:var(--mns-bg);border:1px solid var(--mns-line);border-radius:var(--mns-radius);
         padding:clamp(18px,4vw,32px);max-width:760px;margin:0 auto}
-      h2{font-size:1.15rem;font-weight:600;margin:0 0 2px}
+      h2{font-size:1.15rem;font-weight:700;letter-spacing:.3px;margin:0 0 2px}
       .lead{color:var(--mns-muted);font-size:.9rem;margin:0 0 22px}
       .inputs{display:flex;flex-wrap:wrap;gap:20px 28px;margin-bottom:8px}
       .field{flex:1 1 240px;min-width:200px}
@@ -323,7 +324,7 @@ if (typeof customElements !== 'undefined' && typeof HTMLElement !== 'undefined')
       .mns-g-track{fill:none;stroke:var(--mns-track);stroke-width:14;stroke-linecap:round}
       .mns-g-band{fill:none;stroke:var(--mns-band);stroke-width:14;stroke-linecap:round}
       .mns-g-marker{stroke:var(--mns-fg);stroke-width:2;opacity:.55}
-      .mns-g-big{fill:var(--mns-fg);font-size:21px;font-weight:700}
+      .mns-g-big{fill:var(--mns-fg);font-size:20px;font-weight:700;font-family:var(--mns-font-display)}
       .mns-g-sub{fill:var(--mns-muted);font-size:9.5px}
       .mns-g-tick{fill:var(--mns-muted);font-size:9px}
       .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:18px;flex-wrap:wrap}
